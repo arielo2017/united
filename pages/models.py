@@ -4,8 +4,8 @@ from django.db import models
 
 class users(models.Model):
 
-    firstname = models.CharField(max_length=10)
-    lastname = models.CharField(max_length=10)
+    firstname = models.CharField(max_length=20)
+    lastname = models.CharField(max_length=20)
     user_id = models.IntegerField()
 
     def __str__(self):
