@@ -20,7 +20,7 @@ def about(request):
 class usersList(APIView):
 
     def get(self, request):
-        users1 =  users.objects.all()
+        users1 = users.objects.all()
         serializer = usersSerializer(users1, many=True)
         return Response(serializer.data)
 

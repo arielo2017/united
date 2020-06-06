@@ -13,13 +13,12 @@ class users(models.Model):
         
         
 class matchmaking(models.Model):
-   user_id = models.ManyToManyField('users')
-   matchname = models.CharField(max_length = 20)
-   datetoplay = models.DateTimeField()
-   city = models.CharField(max_length=20)
-   price = models.IntegerField()
-   match_id = models.IntegerField()
+    user_id = models.ManyToManyField('users')
+    matchname = models.CharField(max_length = 20)
+    datetoplay = models.DateTimeField()
+    city = models.CharField(max_length=20)
+    price = models.IntegerField()
+    match_id = models.IntegerField()
 
-
-   def __str__(self):
+    def __str__(self):
         return self.matchname
