@@ -138,4 +138,7 @@ STATICFILES_DIRS = [
 
 # Configure Django App for Heroku.
 import django_heroku
+# This should already be in your settings.py
 django_heroku.settings(locals())
+# This is new
+# del DATABASES['default']['OPTIONS']['sslmode']
