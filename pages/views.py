@@ -11,10 +11,10 @@ from . serializers import usersSerializer
 from . serializers import matchSerializer
 
 def index(request):
-    return render(request, 'pages/index.htlm')
+    return render(request, 'index.htlm')
 
 def about(request):
-    return render(request, 'pages/about.htlm')
+    return render(request, 'about.htlm')
 
 
 class usersList(APIView):
