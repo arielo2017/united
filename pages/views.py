@@ -46,7 +46,8 @@ class trainingList(APIView):
         print('converted:', json.dumps(request.data))
         
         try:
-            serializer = trainingSerializer(data=json.dumps(request.data))
+            serializer = trainingSerializer(data=request.data)
+            print('serializer....', serializer)
             if serializer.is_valid():
                 serializer.save()
                 return Response(serializer.data, status=status.HTTP_201_CREATED)

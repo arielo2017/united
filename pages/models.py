@@ -24,12 +24,12 @@ class matchmaking(models.Model):
 
 class training(models.Model):
      
-    user_id = models.ManyToManyField('users')
-    form_name = models.CharField(max_length=20)
-    city = models.CharField(max_length=20)
-    date = models.DateTimeField()
-    training_id = models.IntegerField()
+    user_id = models.IntegerField()
+    form_name = models.CharField(max_length=40)
+    City = models.CharField(max_length=20)
+    Date = models.DateTimeField()
+    form_id = models.IntegerField()
 
     def __str__(self):
-        return self.form_name       
+        return self.form_id       
 

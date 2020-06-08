@@ -24,3 +24,4 @@ class trainingSerializer(serializers.ModelSerializer):
     class Meta:
         model = training
         fields= '__all__'
+
