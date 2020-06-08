@@ -25,7 +25,7 @@ class matchmaking(models.Model):
 class training(models.Model):
      
     user_id = models.IntegerField()
-    form_name = models.CharField(allow_blank=True, max_length=40, required=False)
+    form_name = models.CharField(max_length=40, blank=True, null=True)
     City = models.CharField(max_length=20)
     Date = models.DateField(required=False)
     form_id = models.CharField(max_length=20)
