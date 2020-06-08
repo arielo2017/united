@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import dj_database_url
 import dotenv
-import wordpress_api
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'united',
-    'wordpress_api',
 ]
 
 MIDDLEWARE = [
@@ -145,5 +144,3 @@ django_heroku.settings(locals())
 # This is new
 # del DATABASES['default']['OPTIONS']['sslmode']
 
-# Wordpress
-WP_URL = 'http://your-wordpress-app.com/'
