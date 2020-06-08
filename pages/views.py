@@ -43,11 +43,10 @@ class trainingList(APIView):
 
     def post(self,request):
         print('reading....')
-        print('request:', request.data)
         print('converted:', json.dumps(request.data))
-
+        
         try:
-            serializer = trainingSerializer(data=request.data)
+            serializer = trainingSerializer(data=json.dumps(request.data))
             if serializer.is_valid():
                 serializer.save()
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
