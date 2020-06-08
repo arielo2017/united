@@ -42,7 +42,7 @@ class trainingList(APIView):
 
     def post(self,request):
         print('reading....')
-        print('request:', request)
+        print('request:', request.data)
         serializer = trainingSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
