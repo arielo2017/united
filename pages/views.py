@@ -11,6 +11,7 @@ from . models import training
 from . serializers import usersSerializer
 from . serializers import matchSerializer
 from . serializers import trainingSerializer
+import json
 
 def index(request):
     return render(request, 'pages/index.htlm')
@@ -43,13 +44,16 @@ class trainingList(APIView):
     def post(self,request):
         print('reading....')
         print('request:', request.data)
-        serializer = trainingSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        print('converted:', json.dumps(request.data))
 
-
+        try:
+            serializer = trainingSerializer(data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except Exception:
+            print(Exception)
 
 class matchMakingList(APIView):
 
