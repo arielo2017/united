@@ -37,11 +37,11 @@ class trainingList(APIView):
 
     def get(self, request):
         training1 = training.objects.all()
-        serializer = matchSerializer(training1, many=True)
+        serializer = trainingSerializer(training1, many=True)
         return Response(serializer.data)
 
     def post(self,request):
-        serializer = usersSerializer(data=request.data)
+        serializer = trainingSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)

@@ -1,6 +1,7 @@
 from rest_framework import  serializers
 from . models import users
 from . models import matchmaking
+from . models import training
 
 
 class usersSerializer(serializers.ModelSerializer):
@@ -21,5 +22,5 @@ class matchSerializer(serializers.ModelSerializer):
 class trainingSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = matchmaking
+        model = training
         fields= '__all__'
