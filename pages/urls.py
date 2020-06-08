@@ -8,6 +8,8 @@ urlpatterns = [
     path('', views.index, name='about'),
     path('admin/', admin.site.urls),
     path('users/', views.usersList.as_view()),
-    path('matches/', views.matchMakingList.as_view())
+    path('matches/', views.matchMakingList.as_view()),
+    path('training/', views.trainingList.as_view()),
+    
 
 ]

@@ -7,8 +7,10 @@ from rest_framework.response import Response
 from rest_framework import status
 from . models import users
 from . models import matchmaking
+from . models import training
 from . serializers import usersSerializer
 from . serializers import matchSerializer
+from . serializers import trainingSerializer
 
 def index(request):
     return render(request, 'pages/index.htlm')
@@ -24,8 +26,28 @@ class usersList(APIView):
         serializer = usersSerializer(users1, many=True)
         return Response(serializer.data)
 
-    def post(self):
-        pass
+    def post(self,request):
+        serializer = usersSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class trainingList(APIView):
+
+    def get(self, request):
+        training1 = training.objects.all()
+        serializer = matchSerializer(training1, many=True)
+        return Response(serializer.data)
+
+    def post(self,request):
+        serializer = usersSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
 
 class matchMakingList(APIView):
 

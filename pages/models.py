@@ -10,8 +10,7 @@ class users(models.Model):
 
     def __str__(self):
         return self.firstname
-        
-        
+
 class matchmaking(models.Model):
     user_id = models.ManyToManyField('users')
     matchname = models.CharField(max_length = 20)
@@ -22,3 +21,15 @@ class matchmaking(models.Model):
 
     def __str__(self):
         return self.matchname
+
+class training(models.Model):
+     
+    user_id = models.ManyToManyField('users')
+    training_name = models.CharField(max_length = 20)
+    city = models.CharField(max_length=20)
+    date = models.DateTimeField()
+    training_id = models.IntegerField()
+
+    def __str__(self):
+        return self.training_name       
+

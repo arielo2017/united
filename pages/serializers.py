@@ -16,3 +16,10 @@ class matchSerializer(serializers.ModelSerializer):
     class Meta:
         model = matchmaking
         fields= '__all__'
+
+
+class trainingSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = matchmaking
+        fields= '__all__'
