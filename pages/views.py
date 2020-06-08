@@ -41,6 +41,8 @@ class trainingList(APIView):
         return Response(serializer.data)
 
     def post(self,request):
+        print('reading....')
+        print('request:', request)
         serializer = trainingSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
