@@ -23,5 +23,5 @@ class trainingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = training
-        fields = ['user_id', 'City', 'form_name', 'form_id','Date']
+        fields = ['user_id', 'City', 'form_name', 'form_id', 'Date']
 
