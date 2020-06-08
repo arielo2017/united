@@ -28,7 +28,7 @@ class training(models.Model):
     form_name = models.CharField(max_length=40)
     City = models.CharField(max_length=20)
     Date = models.DateTimeField()
-    form_id = models.IntegerField()
+    form_id = models.CharField(max_length=20)
 
     def __str__(self):
         return self.form_id       
