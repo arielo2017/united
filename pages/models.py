@@ -31,5 +31,15 @@ class training(models.Model):
     form_id = models.CharField(max_length=20)
 
     def __str__(self):
-        return self.form_id       
+        return self.form_id   
 
+class lobby(models.Model):
+     
+    user_id = models.ManyToManyField('users')
+    lobby_id = models.IntegerField()
+    lobby_name = models.CharField(max_length=20)
+    City = models.CharField(max_length=20)
+    Date = models.DateField(null=True) 
+
+    def __str__(self):
+        return self.lobby_name       

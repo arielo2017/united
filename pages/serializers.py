@@ -2,6 +2,7 @@ from rest_framework import  serializers
 from . models import users
 from . models import matchmaking
 from . models import training
+from . models import lobby
 
 
 class usersSerializer(serializers.ModelSerializer):
@@ -23,5 +24,11 @@ class trainingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = training
-        fields = ['user_id', 'City', 'form_name', 'form_id', 'Date']
+        fields = ['user_id', 'City', 'form_name', 'Date']
+
+class lobbySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = lobby
+        fields= '__all__'
 

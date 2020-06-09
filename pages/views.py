@@ -64,3 +64,12 @@ class matchMakingList(APIView):
 
     def post(self):
         pass
+
+
+class lobbyList(APIView):
+
+    def get(self, request):
+        pass
+
+    def post(self):
+        pass
