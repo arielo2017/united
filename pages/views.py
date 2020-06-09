@@ -8,6 +8,7 @@ from rest_framework import status
 from . models import users
 from . models import matchmaking
 from . models import training
+from . models import lobby
 from . serializers import usersSerializer
 from . serializers import matchSerializer
 from . serializers import trainingSerializer
@@ -69,7 +70,9 @@ class matchMakingList(APIView):
 class lobbyList(APIView):
 
     def get(self, request):
-        pass
+        lobby1 = lobby.objects.all()
+        serializer = lobbySerializer(lobby1, many=True)
+        return Response(serializer.data)
 
     def post(self):
         pass

@@ -38,7 +38,7 @@ class lobby(models.Model):
     user_id = models.ManyToManyField('users')
     lobby_id = models.IntegerField()
     lobby_name = models.CharField(max_length=20)
-    City = models.CharField(max_length=20)
+    city = models.CharField(max_length=20)
     Date = models.DateField(null=True) 
 
     def __str__(self):
