@@ -11,6 +11,7 @@ from . models import training
 from . models import lobby
 from . serializers import usersSerializer
 from . serializers import matchSerializer
+from . serializers import lobbySerializer
 from . serializers import trainingSerializer
 import json
 
